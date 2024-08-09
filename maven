@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+ stages {
+        stage('clean') {
+            steps {
+                sh 'mvn clean'
+    }
+}
+ stages {
+        stage('vlaidate') {
+            steps {
+                sh 'mvn validate'
+}
+}
+ stages {
+        stage('test') {
+            steps {
+                sh 'mvn test'
+}
+}
+}
+}
