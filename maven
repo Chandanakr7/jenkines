@@ -1,13 +1,12 @@
 pipeline {
     agent any
 tools {
-maven 'maven'
+    maven 'maven'
 }
-
-    stages {
-        stage('Hello') {
+stages {
+        stage('pull') {
             steps {
-                echo 'Hello World'
+                git 'https://github.com/Chandanakr7/jenkines.git'
             }
         }
 }
