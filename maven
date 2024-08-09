@@ -7,16 +7,19 @@ pipeline {
                 echo 'Hello World'
             }
         }
+}
  stages {
         stage('clean') {
             steps {
                 sh 'mvn clean'
     }
 }
+}
  stages {
         stage('vlaidate') {
             steps {
                 sh 'mvn validate'
+}
 }
 }
  stages {
