@@ -1,34 +1,33 @@
 pipeline {
     agent any
-tools {
-    maven 'maven'
-}
-stages {
+    
+    tools {
+        maven 'maven' // Ensure 'maven' is the correct name of the Maven tool in your Jenkins configuration
+    }
+    
+    stages {
         stage('pull') {
             steps {
                 git 'https://github.com/Chandanakr7/jenkines.git'
             }
         }
-}
- stages {
+        
         stage('clean') {
             steps {
                 sh 'mvn clean'
-    }
-}
-}
- stages {
-        stage('vlaidate') {
+            }
+        }
+        
+        stage('validate') {  // Corrected the typo
             steps {
                 sh 'mvn validate'
-}
-}
-}
- stages {
+            }
+        }
+        
         stage('test') {
             steps {
                 sh 'mvn test'
-}
-}
-}
+            }
+        }
+    }
 }
